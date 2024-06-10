@@ -1,17 +1,36 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Container, VStack, Heading, Input, Button, List, ListItem, Text, Box } from "@chakra-ui/react";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
+    <Container maxW="container.md" p={4}>
+      <VStack spacing={8}>
+        {/* Header */}
+        <Heading as="h1" size="2xl" textAlign="center" mt={8}>
+          Todo App
+        </Heading>
+
+        {/* Main Section */}
+        <Box w="100%">
+          <VStack spacing={4}>
+            <Input placeholder="Add a new todo" size="lg" />
+            <Button colorScheme="teal" size="lg" w="100%">
+              Add Todo
+            </Button>
+            <List spacing={3} w="100%">
+              <ListItem p={4} shadow="md" borderWidth="1px" borderRadius="md">
+                Sample Todo 1
+              </ListItem>
+              <ListItem p={4} shadow="md" borderWidth="1px" borderRadius="md">
+                Sample Todo 2
+              </ListItem>
+            </List>
+          </VStack>
+        </Box>
+
+        {/* Footer */}
+        <Box as="footer" w="100%" textAlign="center" py={4} borderTopWidth="1px">
+          <Text>© 2023 Todo App. All rights reserved.</Text>
+        </Box>
       </VStack>
     </Container>
   );
